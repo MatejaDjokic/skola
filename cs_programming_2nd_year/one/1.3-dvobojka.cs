@@ -34,3 +34,29 @@ public class Program
         Console.Write("\n");
     }
 }
+
+/*
+public class Program
+{
+    public static void Main()
+    {
+        int n = int.Parse(Console.ReadLine());
+    int[] a = new int[n];
+    string[] str = Console.ReadLine().Split();
+    List<int> parni = new List<int>();
+    List<int> neparni = new List<int>();
+    for (int i = 0; i < n; i++)
+    {
+        a[i] = int.Parse(str[i]);
+        if (a[i] % 2 == 0)
+            parni.Add(a[i]);
+        else if (a[i] % 2 != 0)
+            neparni.Add(a[i]);
+    }
+    foreach (var x in parni)
+        Console.Write(x + " ");
+    foreach (var x in neparni)
+        Console.Write(x + " ");
+    }
+}
+*/
