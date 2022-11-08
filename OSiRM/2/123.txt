@@ -1,23 +1,4 @@
 
-REDOVI PROCESA
-
-*Zadatak OS
-
-zadaci os je da maksimalno povecaju efikasnost kada je izvrsavanje procesa u pitanju
-
-procesi ke koriste na sto blji nacin
-
-izvrsavanje se obicno sastoji do naizmenicnog koriscenja procesora i cekanja na ulaz izlaz uredjaje
-
-procesi se izvrsavaju u procesoru da on ne bi bio besposlen nekom drugom procesu se dozvolkjava da koristi procesor
-
-*Planeri
-
-od procesora i ulazno izlaznih uredjaja OS obicno bira podskup koji ce se odmah ucitati u R memoriju
-
-posle pocetne selekcije os bira redosled kojim procesi dobijaju procesor , ostale uredjaje i koko vremena mogu da koriste dobijene resurse
-
-poslovi ovakvog tipa se proveravaju modulima koji se zovu planeri
 
 *redovi procesa
 
