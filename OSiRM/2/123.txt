@@ -1,0 +1,212 @@
+OSIRM
+
+*procesi
+proces je program u izvrsavanju
+izvorni kod programa je niz instrukcija koje traba izvrsiti i cuva se kao skup znakova
+izvrsni program nastaje prevodjenjem napisanog izvornog programa na masinski jezik
+pokretanje izvrsnog programa podrazumeva njegovo ucitavanje u primarnu memoriju pacunara i izvrsavanje na procesoru
+na ovaj nacin pokrenuti program postaje proces
+proces je aktivan a os je duzan da vodi racuna o njemu
+da bi obavio zadatak zbog kojeg je pokrenut procesu su potrebni resursi poput procesora memorije ulazno-izlaznih uredjaja fajlova...
+
+
+procesi mogu biti korisnicki ili sistemski, a izvrsavanje je konkurentno i/ili paralelno
+
+-programski brojac vodi racuna o tome dokle sestiglo sa izvrsavanjem procesa
+
+
+*zadatak operativnih sistema
+
+kreiranje i brisanje procesa
+upravljanje procesima
+komunikaciju izmedju procesa
+sihronizaciju procesa
+
+
+*segmenti
+stek segment-sadrzi lokalne promenljive i parametre f-ja
+hip segment-deo memorije u koji se smestaju podaci koji segenerisu u toku izvrsavanja procesa
+segment podataka-sadrzi globalne promenljivue
+kod segment-instrukcije koje proces treba da izvrsi
+
+
+**stanja procesa
+*osnovna stanja
+novi-
+spreman-
+izvrsavanje-
+cekanje-
+zavrsen-
+
+
+
+******************************************************************************************************************************************
+
+
+NITI
+
+*Niti predstavljaju osnovne jedinice za izvrsavanje u okviru procesa imaju i sopstvene resurse.
+Svaka nit poseduje svoje resurse programski brojac i stek a razlikuje ih jedinstveni identifikator
+
+*kontrolna nit
+
+ima zadatak da obavi potrebne inicijalizacije i kreira ostale niti koje su potrebne za izvrsavanje procesa
+
+*prednosti
+
+omogucavaju ustede memorijskog prostora i vremena i omogucava se rad procesora ciji su delovi potpuno blokirani
+kreiranje niti je brze i zahteva manje prostora u odnosu na procese tako da ovakav pristup omogucava da se mnogo brze odgovori na zahteve
+ali i da se opsluzi mnogo veci broj klijenata
+
+
+*korisnicke ili niti jezgra
+
+u zavisnosti da li se nitima upravlja sa korisnickog ili sistemskog nivoa niti se naziau korisnicke ili niti jezgra
+ovo se postize preslikavanje korisnickih u niti jezgra
+Najcesce podrzana preslikavanja su
+preslikavanje vise u jednu - podrazumeva da se vise korisnickih niti sve koje pripadaju jednom procesu preslikaju u jednu nit
+/ nedostatak: kad se blokira neka od korisnickih niti blokira se i nit jezgra tako da dolazi do blokiranja celog procesa
+jedna u jednu - potpuno se prepusta operativnom sistemu / mana: ogranicavanje broja niti jezgara i korisnickog dela
+vise u vise - kombinacija prethodna dva/ najkompleksniji model z implementiranje ali i najkvalitetniji moze da se prilagodi potrebama
+
+procesa kao i karakteristikama sistema
+
+
+**********************************************************************************************************************************************
+
+
+REDOVI PROCESA
+
+*Zadatak OS
+
+zadaci os je da maksimalno povecaju efikasnost kada je izvrsavanje procesa u pitanju
+
+procesi ke koriste na sto blji nacin
+
+izvrsavanje se obicno sastoji do naizmenicnog koriscenja procesora i cekanja na ulaz izlaz uredjaje
+
+procesi se izvrsavaju u procesoru da on ne bi bio besposlen nekom drugom procesu se dozvolkjava da koristi procesor
+
+*Planeri
+
+od procesora i ulazno izlaznih uredjaja OS obicno bira podskup koji ce se odmah ucitati u R memoriju
+
+posle pocetne selekcije os bira redosled kojim procesi dobijaju procesor , ostale uredjaje i koko vremena mogu da koriste dobijene resurse
+
+poslovi ovakvog tipa se proveravaju modulima koji se zovu planeri
+
+*redovi procesa
+
+da bi se olaksalo upravljanje procesa formiraju se redovi proceasa
+
+pocetni red /se zove red poslova, taj red sadrzi skup savih procesa u sistemu
+
+red spremnih procesa /drugi  sadrzi procese kojii su izabrani po nekom kriterijumu koji je odredio os/smesteni su u glavnu memoriju
+
+red procesa koji cekaju /treci  oni su procesi koji cekaju
+
+
+*vrste planera
+
+dugorocni i kratkorocni cesto se prave (implementira) srednjerocni
+
+
+
+*dugorocni
+
+izabiraju procese koji se aktivno ukljuce
+
+prave dobar odabir procesa za rad
+
+ne pozivaju se ucestalo
+
+vaznije je da se napravi dobra kombinacija nego da bude brzo
+
+
+*kratkorocni
+
+cesto ih pozivamo/ planer procesora vaznija je brznia od optimalnosti
+
+*prebacivanje
+
+kada procesi ometaju jedni druge dolazi do umanjenja efikasnosti
+
+korisnije je ukloniti neke procese iz memorije/ poske nekog vremena procesi se vracaju u memoriju
+
+*******************************************************************************************************************************************************
+
+analiza korektnosti algoritama, odsecanje, sortiranje,
+petlja: slozenost i 4 podnaslova, zamena, binarna pretraga
+
+*******************************************************************************************************************************************************
+
+
+*Viseprocesorski sistemi
+
+dozvoljavaju vecu fleksibilnost kada je rad sa procesima i nitima u pitanju
+
+najefikasniji su ali i najosetljiviji jer zahtevaju pazljivo planiranje
+
+potrebno je obezbediti sihronizaciju niti istog procesa koje se mogu izvrsavati na razlicitim procesorima
+
+*dva pristupa
+
+simetricno i asimetriceno multiprocesiranje
+
+*simetricno
+
+podrazimeva da si procesori ravnopravni i da se rasporedjuju na bilo koji od njih u zavisnosti od primenjenog algoritma za rasporedjivanje
+
+svi dele zajednicku memoriju svi imaju pristup u-i uredjajima os ih tretira kao ravnopravne
+
+efikasnije je u odnosu na asimetricno multiprocesiranje u realnoj primeni
+
+*asimetricno mp
+
+zasniva se na ideji da neki procesori mogu biti zaduzeni za odredjene funkcije
+
+npr jedan procesor proglasite za glavni i odna je on odgovoran za sve
+
+ostali procesori imaju zadatak da izvrsavaju iskljucivo korisnicke procese dodeljene od strane glavnog procesora
+
+sistemi koji podrzavaju ovakav prostup cesto su neefikasni
+
+*rasporedjivanje procesa
+
+kad je jezgro slobodno moze mu se dodeliti proces za obradu
+
+treba voditi racuna da se dva jezgra mozu dobiti isti proces za izvrsavanje
+
+planeri vode racuna o spremnim procesima i biraju proces koji ce se izvrsiti
+
+*algoritmi rasporedjivanja
+
+kvalitet algoritma se obicno ocenjije na osnovu sledecih kriterijuma
+
+iskoriscenost procesa (koliko je procesor bio zaposlen u odredjenom vremenskom periodu)
+
+propuska moc (broj procesa koji se mogu zavrsiti u jedinici vremena)
+
+vreme obrade (vreme koje protekne od momente pokretanja procesa do njegovog zavrsetka_
+
+vreme cekanja ( vreme koje proces provede cekajuci u redu spremnih procesa_
+
+vreme odaziva ( vreme koje proeknne od rijavljivanja procesa do trenitka kada se proizvede prvi izlaz programa)
+
+kolicnik duzine vremenna obrade i trajanja izvrsavanja procesa
+
+
+*algoritmi planiranja slipikapanopo
+
+fcfs
+spf
+
+algorritmi sa prioritetima
+kruzni algoritmi (round robin)
+
+redovi u vise nivoa
+redovi u vise nivoa sa povratnom vezom
+
+kraj
+*******************************************************************************************************************************************************
+
