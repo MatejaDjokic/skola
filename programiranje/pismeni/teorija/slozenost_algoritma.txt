@@ -1,0 +1,44 @@
+analiza algoritma predstavlja postupak kojim se predviđa ponašanje i vrši procena potrebnih resursa algoritma. 
+исправност односно коректност је суштинска особина алгоритама и
+програма.
+
+експлозија ракете ариане 1996. - конверзијом броја из
+64-bit double => 16-bit int (prekoracenje)
+
+пад сателита криосат 2005. kasno раздвајања сателита и ракете
+kostalo eu 135 mil e
+
+грешка у num co-cpu процесора pentium-a 1994.
+pogresni indeksi u petlji
+
+пад орбитера послатог на марс 1999. nepostojana konverzija metricke i inperijalne jedinice
+
+спецификација је опис жељеног понашања програма који треба
+написати.
+
+спецификација =>    1. pred uslov(услова које улазни параметри програма задовољавају) 
+                    2. постуслова (услова које резултати израчунавања морају да задовоље)
+                   
+коректност 2 аспекта:
+    парцијална коректност: {свака вредност} коју алгоритам израчунава за улазне параметре
+                    који {предуслов} мора да задовољи {постуслов}
+                    
+    заустављање: алгоритам мора да се заустави за све улазе који задовољавају предуслов.
+    {за заустављајуће парцијално коректне алгоритме кажемо да су тотално коректни.}
+
+verifikovanje => postupak pokazivanje da je program ispravan
+
+2 основна приступа:
+
+1. динамичка верификација: testiranje u fazi izvrsavanja
+
+статичка верификација: analiza source code, pomocu func i math aparata
+
+(OVERFLOW)
+Једна од најчешћих грешака представља грешка прекорачења.
+(Buffer overflow)
+prekoracenje indeksa u nizu maks index je n a moj indek je n + 5 ili 1 ili tk nes 
+
+(P(0) ∧ (∀n)(P(n) ⇒ P(n + 1))) ⇒ (∀n)(P(n))
+{baza indukcije} {induktivni korak}
+

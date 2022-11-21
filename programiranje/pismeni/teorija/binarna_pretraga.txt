@@ -1,0 +1,2 @@
+ne sortirani niz linearna pretrage O(n)
+sortirani niz binarna pretraga O(log n)

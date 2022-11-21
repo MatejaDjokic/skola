@@ -1,0 +1,6 @@
+QuickSort, MergeSort, HeapSort, SelectionSort,
+InsertionSort, BubbleSort и ShellSort.
+
+sporiji: Selection, Insertion, Bubble 
+brzi: Quick, Merge, Heap, Shell
+
