@@ -22,7 +22,7 @@ namespace rastavljanje_na_proste_cinioice
                 while(n % f == 0)
                 {
                     // ispisujemo f posto je n deljivo sa njim 
-                    // time znaci da je jedan njegov cinioc
+                    // time znaci da je jedan njegov cinioc`
                     Console.Write(f + " ");
                     // onda delimo vrednost n sa f 
                     n /= f;
